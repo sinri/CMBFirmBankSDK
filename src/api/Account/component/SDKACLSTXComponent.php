@@ -4,7 +4,6 @@
 namespace leqee\CMBFirmBankSDK\api\Account\component;
 
 
-use leqee\CMBFirmBankSDK\XmlBuilder\BaseComponent;
 use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
 
 /**

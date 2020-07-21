@@ -65,9 +65,10 @@ class DocumentWorker
     }
 
     /**
-     * @param BaseComponent $component
+     * @param RequestComponent $component
      */
-    public function appendComponent($component){
+    public function appendComponent(RequestComponent $component)
+    {
         $this->rootElement->appendSubElement($component->toXMLElement());
     }
 

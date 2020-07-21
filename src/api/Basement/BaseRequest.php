@@ -5,8 +5,8 @@ namespace leqee\CMBFirmBankSDK\api\Basement;
 
 
 use Exception;
-use leqee\CMBFirmBankSDK\XmlBuilder\BaseComponent;
 use leqee\CMBFirmBankSDK\XmlBuilder\DocumentWorker;
+use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
 
 abstract class BaseRequest
 {
@@ -27,7 +27,7 @@ abstract class BaseRequest
      */
     protected $infoExtraData=[];
     /**
-     * @var BaseComponent[]
+     * @var RequestComponent[]
      */
     protected $components;
 
@@ -40,7 +40,7 @@ abstract class BaseRequest
     }
 
     /**
-     * @return BaseComponent[]
+     * @return RequestComponent[]
      */
     public function getComponents(): array
     {
@@ -108,11 +108,12 @@ abstract class BaseRequest
     }
 
     /**
-     * @param BaseComponent $component
+     * @param RequestComponent $component
      * @return $this
      */
-    public function appendComponent(BaseComponent $component){
-        $this->components[]=$component;
+    public function appendComponent(RequestComponent $component)
+    {
+        $this->components[] = $component;
         return $this;
     }
 

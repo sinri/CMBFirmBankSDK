@@ -34,8 +34,8 @@ abstract class BaseComponent
     }
 
     public function toXMLElement(){
-        $element=new ArkXMLElement($this->tagName);
-        foreach ($this->properties as $k => $v){
+        $element = new ArkXMLElement($this->getTagName());
+        foreach ($this->properties as $k => $v) {
 //            var_dump($k);
 //            var_dump($v);
             $element->appendSubElement(
@@ -44,6 +44,8 @@ abstract class BaseComponent
         }
         return $element;
     }
+
+    abstract public function getTagName(): string;
 
 //    /**
 //     * @return string

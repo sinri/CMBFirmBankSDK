@@ -6,7 +6,7 @@ namespace leqee\CMBFirmBankSDK\XmlBuilder;
 
 use sinri\ark\xml\entity\ArkXMLElement;
 
-class ResponseComponent extends BaseComponent
+abstract class ResponseComponent extends BaseComponent
 {
     public function __construct(ArkXMLElement $element)
     {

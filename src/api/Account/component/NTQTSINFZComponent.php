@@ -4,9 +4,7 @@
 namespace leqee\CMBFirmBankSDK\api\Account\component;
 
 
-use leqee\CMBFirmBankSDK\XmlBuilder\BaseComponent;
 use leqee\CMBFirmBankSDK\XmlBuilder\ResponseComponent;
-use sinri\ark\xml\entity\ArkXMLElement;
 
 /**
  * Class NTQTSINFZComponent
@@ -48,4 +46,8 @@ use sinri\ark\xml\entity\ArkXMLElement;
 class NTQTSINFZComponent extends ResponseComponent
 {
 
+    public function getTagName(): string
+    {
+        return 'NTQTSINFZ';
+    }
 }
