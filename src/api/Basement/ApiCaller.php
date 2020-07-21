@@ -15,4 +15,10 @@ abstract class ApiCaller
      * @return string
      */
     abstract public function callForXML(BaseRequest $request);
+
+    /**
+     * @param string $requestXML
+     * @return string
+     */
+    abstract public function sendForXML(string $requestXML);
 }

@@ -72,9 +72,19 @@ class HttpWebClient extends ApiCaller
      */
     public function callForXML(BaseRequest $request)
     {
+        return $this->sendForXML($request->generateXML());
+    }
+
+    /**
+     * @param string $requestXML
+     * @return bool|string Response XML, or FALSE
+     * @throws Exception when XML cannot be generated, or cURL failed
+     */
+    public function sendForXML(string $requestXML)
+    {
         $curl = new ArkCurl($this->logger);
         $result = $curl->prepareToRequestURL('POST', $this->apiUrl)
-            ->setPostFormField('REQDATA', $request->generateXML())
+            ->setPostFormField('REQDATA', $requestXML)
             ->execute();
         if ($result === false) {
             throw new Exception($curl->getErrorMessage(), $curl->getErrorNo());
