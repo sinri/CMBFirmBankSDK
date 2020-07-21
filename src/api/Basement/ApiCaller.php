@@ -3,11 +3,13 @@
 
 namespace leqee\CMBFirmBankSDK\api\Basement;
 
-
+/**
+ * Class ApiCaller
+ * @package leqee\CMBFirmBankSDK\api\Basement
+ * Notice: implementation would be found in `leqee\CMBFirmBankSDK\client`
+ */
 abstract class ApiCaller
 {
-    // TODO
-
     /**
      * @param BaseRequest $request
      * @return string

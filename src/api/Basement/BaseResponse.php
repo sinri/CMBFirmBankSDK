@@ -4,6 +4,8 @@
 namespace leqee\CMBFirmBankSDK\api\Basement;
 
 
+use Exception;
+use leqee\CMBFirmBankSDK\api\Basement\definition\ReturnCodeDefinition;
 use sinri\ark\xml\entity\ArkXMLElement;
 use sinri\ark\xml\reader\ArkXMLReader;
 
@@ -38,8 +40,7 @@ abstract class BaseResponse
         foreach ($components as $component){
             if($component->getElementTag()==='INFO'){
                 $this->loadInfoComponent($component);
-            }
-            else{
+            } else{
                 $this->loadOtherComponent($component);
             }
         }
@@ -115,5 +116,15 @@ abstract class BaseResponse
     public function getInfoExtraData(): array
     {
         return $this->infoExtraData;
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function assertCorrectResponse()
+    {
+        if ($this->getInfoReturnCode() !== ReturnCodeDefinition::RETURN_CODE_SUCCESS) {
+            throw new Exception($this->getInfoErrorMessage(), $this->getInfoReturnCode());
+        }
     }
 }
