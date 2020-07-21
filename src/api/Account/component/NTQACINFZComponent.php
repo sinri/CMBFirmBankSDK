@@ -26,7 +26,7 @@ use leqee\CMBFirmBankSDK\XmlBuilder\ResponseComponent;
  * @property string INTRAT C(11) 年利率
  * @property string OPNDAT D 开户日 8 位数字
  * @property string MUTDAT D 到期日 8 位数字
- * @property string INTTYP C(3,3) 利率类型 @see <API DOC A.35 利率类型码>
+ * @property string INTTYP C(3,3) 利率类型 @see <API DOC A.35 利率类型码> `InterestRateCodeDefinition::CODE_OF_*`
  * @property string DPSTXT Z(12) 存期 定期时，取值: 一天 七天 一个月 三个月 六个月 一年 二年 三年 四年 五年
  */
 class NTQACINFZComponent extends ResponseComponent
