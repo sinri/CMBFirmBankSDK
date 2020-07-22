@@ -18,11 +18,13 @@ class DocumentWorker
      */
     protected $rootElement;
 
-    public function __construct(){
-        $this->document=new ArkXMLDocument();
-        $this->document->setVersion("1.0")->setEncoding(ArkXMLDocument::ENCODING_GBK);
+    public function __construct($encoding = ArkXMLDocument::ENCODING_GBK, $version = '1.0')
+    {
+        $this->document = new ArkXMLDocument();
+        $this->document->setVersion($version)
+            ->setEncoding($encoding);
 
-        $this->rootElement=new ArkXMLElement("CMBSDKPGK");
+        $this->rootElement = new ArkXMLElement("CMBSDKPGK");
         $this->document->setRootElement($this->rootElement);
     }
 

@@ -11,6 +11,10 @@ use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
 abstract class BaseRequest
 {
     /**
+     * @var string default as UTF-8, also GBK, BIG5, etc.
+     */
+    protected $encoding;
+    /**
      * @var string 函数名 C(1, 20)
      */
     protected $infoFunctionName;
@@ -21,15 +25,41 @@ abstract class BaseRequest
     /**
      * @var int 数据格式 N(1) 2:xml 格式三
      */
-    protected $infoDataType=2;
+    protected $infoDataType = 2;
     /**
      * @var array
      */
-    protected $infoExtraData=[];
+    protected $infoExtraData = [];
     /**
      * @var RequestComponent[]
      */
     protected $components;
+
+    public function __construct($loginName, $functionName, $extraData = [])
+    {
+        $this->infoLoginName = $loginName;
+        $this->infoFunctionName = $functionName;
+        $this->infoExtraData = $extraData;
+        $this->encoding = 'UTF-8';
+    }
+
+    /**
+     * @return string
+     */
+    public function getEncoding(): string
+    {
+        return $this->encoding;
+    }
+
+    /**
+     * @param string $encoding
+     * @return BaseRequest
+     */
+    public function setEncoding(string $encoding): BaseRequest
+    {
+        $this->encoding = $encoding;
+        return $this;
+    }
 
     /**
      * @return array
@@ -45,12 +75,6 @@ abstract class BaseRequest
     public function getComponents(): array
     {
         return $this->components;
-    }
-
-    public function __construct($loginName,$functionName,$extraData=[]){
-        $this->infoLoginName=$loginName;
-        $this->infoFunctionName=$functionName;
-        $this->infoExtraData=$extraData;
     }
 
     /**
@@ -118,12 +142,14 @@ abstract class BaseRequest
     }
 
     /**
+     * @param string $encoding GBK, UTF-8, BIG5, etc.
      * @return string
      * @throws Exception
      */
-    public function generateXML(){
-        $worker = new DocumentWorker();
-        $worker->setInfoComponent($this->infoLoginName,$this->infoFunctionName,$this->infoDataType,$this->infoExtraData);
+    public function generateXML()
+    {
+        $worker = new DocumentWorker($this->encoding);
+        $worker->setInfoComponent($this->infoLoginName, $this->infoFunctionName, $this->infoDataType, $this->infoExtraData);
         foreach ($this->components as $component) {
             $worker->appendComponent($component);
         }
@@ -131,7 +157,8 @@ abstract class BaseRequest
         //return (new ArkXMLWriter())->composeDocumentAndFlush($worker->getDocument());
     }
 
-    public function send(ApiCaller $apiCaller){
+    public function send(ApiCaller $apiCaller)
+    {
         return $apiCaller->callForXML($this);
     }
 }
