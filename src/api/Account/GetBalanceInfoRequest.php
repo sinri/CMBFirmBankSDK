@@ -11,7 +11,7 @@ use leqee\CMBFirmBankSDK\api\Basement\BaseRequest;
  * Class GetBalanceInfoRequest
  * @package leqee\CMBFirmBankSDK\api\Account
  * 批量查询余额
- * @version 5.37.0 - 2.2
+ * @version 5.37.0 - 2.9
  */
 class GetBalanceInfoRequest extends BaseRequest
 {

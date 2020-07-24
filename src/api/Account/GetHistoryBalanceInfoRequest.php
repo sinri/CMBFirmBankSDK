@@ -11,7 +11,7 @@ use leqee\CMBFirmBankSDK\api\Basement\BaseRequest;
  * Class GetHistoryBalanceInfoRequest
  * @package leqee\CMBFirmBankSDK\api\Account
  * 查询账户历史余额
- * @version 5.37.0 - 2.1
+ * @version 5.37.0 - 2.5
  */
 class GetHistoryBalanceInfoRequest extends BaseRequest
 {

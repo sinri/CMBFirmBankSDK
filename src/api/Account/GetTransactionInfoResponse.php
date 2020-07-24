@@ -8,6 +8,12 @@ use leqee\CMBFirmBankSDK\api\Account\component\NTQTSINFZComponent;
 use leqee\CMBFirmBankSDK\api\Basement\BaseResponse;
 use sinri\ark\xml\entity\ArkXMLElement;
 
+/**
+ * Class GetTransactionInfoResponse
+ * @package leqee\CMBFirmBankSDK\api\Account
+ * 查询账户交易信息
+ * @version 5.37.0 - 2.2
+ */
 class GetTransactionInfoResponse extends BaseResponse
 {
     /**
