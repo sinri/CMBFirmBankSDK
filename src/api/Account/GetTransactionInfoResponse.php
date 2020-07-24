@@ -19,7 +19,7 @@ class GetTransactionInfoResponse extends BaseResponse
     /**
      * @var NTQTSINFZComponent[]
      */
-    protected $transactionList=[];
+    protected $transactionList = [];
 
     /**
      * @return NTQTSINFZComponent[]
@@ -31,6 +31,6 @@ class GetTransactionInfoResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        $this->transactionList[]=new NTQTSINFZComponent($component);
+        $this->transactionList[] = new NTQTSINFZComponent($component);
     }
 }

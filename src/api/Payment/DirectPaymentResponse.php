@@ -19,7 +19,7 @@ class DirectPaymentResponse extends BaseResponse
     /**
      * @var NTQPAYRQZComponent[]
      */
-    protected $paymentResultInfo=[];
+    protected $paymentResultInfo = [];
 
     /**
      * @return NTQPAYRQZComponent[]
@@ -31,8 +31,8 @@ class DirectPaymentResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTQPAYRQZ'){
-            $this->paymentResultInfo[]=new NTQPAYRQZComponent($component);
+        if ($component->getElementTag() === 'NTQPAYRQZ') {
+            $this->paymentResultInfo[] = new NTQPAYRQZComponent($component);
         }
         // else: just ignore
     }

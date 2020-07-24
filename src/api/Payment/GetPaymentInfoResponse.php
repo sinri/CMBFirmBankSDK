@@ -31,8 +31,8 @@ class GetPaymentInfoResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTQPAYQYZ'){
-            $this->paymentInfoList[]=new NTQPAYQYZComponent($component);
+        if ($component->getElementTag() === 'NTQPAYQYZ') {
+            $this->paymentInfoList[] = new NTQPAYQYZComponent($component);
         }
         // else: just ignore
     }

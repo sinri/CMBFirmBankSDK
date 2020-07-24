@@ -17,7 +17,7 @@ class GetBranchBankInfoRequest extends BaseRequest
 {
     public function __construct(string $loginName, string $account = null)
     {
-        parent::__construct($loginName,'GetBbkInfo');
+        parent::__construct($loginName, 'GetBbkInfo');
         if ($account) $this->appendComponent(new NTACCBBKYComponent($account));
     }
 }

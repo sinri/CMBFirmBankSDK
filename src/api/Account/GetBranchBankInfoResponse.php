@@ -19,7 +19,7 @@ class GetBranchBankInfoResponse extends BaseResponse
     /**
      * @var NTACCBBKZComponent[]
      */
-    protected $branchBankList=[];
+    protected $branchBankList = [];
 
     /**
      * @return NTACCBBKZComponent[]
@@ -31,6 +31,6 @@ class GetBranchBankInfoResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        $this->branchBankList[]=new NTACCBBKZComponent($component);
+        $this->branchBankList[] = new NTACCBBKZComponent($component);
     }
 }

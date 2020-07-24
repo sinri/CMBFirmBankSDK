@@ -19,7 +19,7 @@ class GetAccountListResponse extends BaseResponse
     /**
      * @var NTQACLSTZComponent[]
      */
-    protected $accountList=[];
+    protected $accountList = [];
 
     /**
      * @return NTQACLSTZComponent[]
@@ -31,8 +31,8 @@ class GetAccountListResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTQACLSTZ'){
-            $this->accountList[]=new NTQACLSTZComponent($component);
+        if ($component->getElementTag() === 'NTQACLSTZ') {
+            $this->accountList[] = new NTQACLSTZComponent($component);
         }
         // else: just ignore
     }

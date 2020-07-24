@@ -31,8 +31,8 @@ class GetBalanceInfoResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTQADINFZ'){
-            $this->balanceInfoList[]=new NTQADINFZComponent($component);
+        if ($component->getElementTag() === 'NTQADINFZ') {
+            $this->balanceInfoList[] = new NTQADINFZComponent($component);
         }
         // else: just ignore
     }

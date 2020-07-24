@@ -17,11 +17,12 @@ class GetBalanceInfoRequest extends BaseRequest
 {
     public function __construct(string $loginName)
     {
-        parent::__construct($loginName,'NTQADINF');
+        parent::__construct($loginName, 'NTQADINF');
     }
 
-    public function addQueryAccount(string $bankBranch,string $account){
-        $this->appendComponent(new NTQADINFXComponent($bankBranch,$account));
+    public function addQueryAccount(string $bankBranch, string $account)
+    {
+        $this->appendComponent(new NTQADINFXComponent($bankBranch, $account));
         return $this;
     }
 }

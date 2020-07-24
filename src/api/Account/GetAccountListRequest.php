@@ -16,9 +16,9 @@ use leqee\CMBFirmBankSDK\api\Basement\BaseRequest;
 class GetAccountListRequest extends BaseRequest
 {
 
-    public function __construct(string $loginName,string $businessCode,string $businessMode)
+    public function __construct(string $loginName, string $businessCode, string $businessMode)
     {
-        parent::__construct($loginName,'ListAccount');
-        $this->appendComponent(new SDKACLSTXComponent($businessCode,$businessMode));
+        parent::__construct($loginName, 'ListAccount');
+        $this->appendComponent(new SDKACLSTXComponent($businessCode, $businessMode));
     }
 }

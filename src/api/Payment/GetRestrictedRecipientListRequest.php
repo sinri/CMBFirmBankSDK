@@ -16,6 +16,6 @@ class GetRestrictedRecipientListRequest extends BaseRequest
 {
     public function __construct(string $loginName)
     {
-        parent::__construct($loginName,'NTQRYRVL');
+        parent::__construct($loginName, 'NTQRYRVL');
     }
 }

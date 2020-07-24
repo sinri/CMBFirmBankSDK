@@ -21,7 +21,7 @@ class SDKPAYRQXComponent extends RequestComponent
      */
     public function __construct(string $businessMode)
     {
-        $this->BUSMOD=$businessMode;
+        $this->BUSMOD = $businessMode;
     }
 
     public function getTagName(): string

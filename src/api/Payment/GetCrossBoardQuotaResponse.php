@@ -20,12 +20,12 @@ class GetCrossBoardQuotaResponse extends BaseResponse
     /**
      * @var NTCRBINQZComponent[]
      */
-    protected $crossBoardBankList=[];
+    protected $crossBoardBankList = [];
 
     /**
      * @var NTCRBINQZ2Component[]
      */
-    protected $crossBoardBankInfo=[];
+    protected $crossBoardBankInfo = [];
 
     /**
      * @return NTCRBINQZComponent[]
@@ -45,10 +45,10 @@ class GetCrossBoardQuotaResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTCRBINQZ'){
-            $this->crossBoardBankList[]=new NTCRBINQZComponent($component);
-        } elseif ($component->getElementTag()==='NTCRBINQZ2'){
-            $this->crossBoardBankInfo[]=new NTCRBINQZ2Component($component);
+        if ($component->getElementTag() === 'NTCRBINQZ') {
+            $this->crossBoardBankList[] = new NTCRBINQZComponent($component);
+        } elseif ($component->getElementTag() === 'NTCRBINQZ2') {
+            $this->crossBoardBankInfo[] = new NTCRBINQZ2Component($component);
         }
     }
 }

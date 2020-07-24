@@ -21,10 +21,10 @@ abstract class ResponseComponent extends BaseComponent
      */
     protected function loadByElementTypeA(ArkXMLElement $component)
     {
-        $subElements=$component->getAllSubElements();
-        foreach ($subElements as $element){
-            $tag=$element->getElementTag();
-            $this->properties[$tag]=$element->getTextContent();
+        $subElements = $component->getAllSubElements();
+        foreach ($subElements as $element) {
+            $tag = $element->getElementTag();
+            $this->properties[$tag] = $element->getTextContent();
         }
     }
 }

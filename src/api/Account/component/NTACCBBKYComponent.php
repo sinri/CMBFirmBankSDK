@@ -19,7 +19,7 @@ class NTACCBBKYComponent extends RequestComponent
      */
     public function __construct(string $account)
     {
-        $this->ACCNBR=$account;
+        $this->ACCNBR = $account;
     }
 
 

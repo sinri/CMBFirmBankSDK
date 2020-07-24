@@ -23,12 +23,12 @@ class NTQABINFYComponent extends RequestComponent
      * @param string $beginDate
      * @param string $endDate
      */
-    public function __construct(string $bankBranch,string $account,string $beginDate,string $endDate)
+    public function __construct(string $bankBranch, string $account, string $beginDate, string $endDate)
     {
-        $this->BBKNBR=$bankBranch;
-        $this->ACCNBR=$account;
-        $this->BGNDAT=$beginDate;
-        $this->ENDDAT=$endDate;
+        $this->BBKNBR = $bankBranch;
+        $this->ACCNBR = $account;
+        $this->BGNDAT = $beginDate;
+        $this->ENDDAT = $endDate;
     }
 
 

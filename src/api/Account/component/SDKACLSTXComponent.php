@@ -19,10 +19,10 @@ class SDKACLSTXComponent extends RequestComponent
      * @param string $businessCode 业务类别 C(6) `BusinessCodeDefinition::CODE_OF_*`
      * @param string $businessMode 业务模式 C(5)
      */
-    public function __construct(string $businessCode,$businessMode)
+    public function __construct(string $businessCode, $businessMode)
     {
-        $this->BUSCOD=$businessCode;
-        $this->BUSMOD=$businessMode;
+        $this->BUSCOD = $businessCode;
+        $this->BUSMOD = $businessMode;
     }
 
     public function getTagName(): string

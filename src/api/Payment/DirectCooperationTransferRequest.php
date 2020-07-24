@@ -33,7 +33,8 @@ class DirectCooperationTransferRequest extends BaseRequest
      * @param DCOPRTRFXComponent $payDetail
      * @return DirectCooperationTransferRequest
      */
-    public function addPayDetail(DCOPRTRFXComponent $payDetail){
+    public function addPayDetail(DCOPRTRFXComponent $payDetail)
+    {
         $this->appendComponent($payDetail);
         return $this;
     }

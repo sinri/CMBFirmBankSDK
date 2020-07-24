@@ -30,17 +30,17 @@ abstract class BaseResponse
     /**
      * @var array
      */
-    protected $infoExtraData=[];
+    protected $infoExtraData = [];
 
     public function __construct(string $xml)
     {
-        $rootElement=ArkXMLReader::simplyParseXMLToElement($xml);
+        $rootElement = ArkXMLReader::simplyParseXMLToElement($xml);
 
-        $components=$rootElement->getAllSubElements();
-        foreach ($components as $component){
-            if($component->getElementTag()==='INFO'){
+        $components = $rootElement->getAllSubElements();
+        foreach ($components as $component) {
+            if ($component->getElementTag() === 'INFO') {
                 $this->loadInfoComponent($component);
-            } else{
+            } else {
                 $this->loadOtherComponent($component);
             }
         }
@@ -49,24 +49,25 @@ abstract class BaseResponse
     /**
      * @param ArkXMLElement $component
      */
-    protected function loadInfoComponent($component){
-        $elements=$component->getAllSubElements();
-        foreach ($elements as $propertyNode){
-            switch ($propertyNode->getElementTag()){
+    protected function loadInfoComponent($component)
+    {
+        $elements = $component->getAllSubElements();
+        foreach ($elements as $propertyNode) {
+            switch ($propertyNode->getElementTag()) {
                 case 'FUNNAM':
-                    $this->infoFunctionName=$propertyNode->getTextContent();
+                    $this->infoFunctionName = $propertyNode->getTextContent();
                     break;
                 case 'DATTYP':
-                    $this->infoDataType=$propertyNode->getTextContent();
+                    $this->infoDataType = $propertyNode->getTextContent();
                     break;
                 case 'RETCOD':
-                    $this->infoReturnCode=$propertyNode->getTextContent();
+                    $this->infoReturnCode = $propertyNode->getTextContent();
                     break;
                 case 'ERRMSG':
-                    $this->infoErrorMessage=$propertyNode->getTextContent();
+                    $this->infoErrorMessage = $propertyNode->getTextContent();
                     break;
                 default:
-                    $this->infoExtraData[$propertyNode->getElementTag()]=$propertyNode->getTextContent();
+                    $this->infoExtraData[$propertyNode->getElementTag()] = $propertyNode->getTextContent();
                     break;
             }
         }
@@ -95,22 +96,6 @@ abstract class BaseResponse
     }
 
     /**
-     * @return int
-     */
-    public function getInfoReturnCode(): int
-    {
-        return $this->infoReturnCode;
-    }
-
-    /**
-     * @return string
-     */
-    public function getInfoErrorMessage(): string
-    {
-        return $this->infoErrorMessage;
-    }
-
-    /**
      * @return array
      */
     public function getInfoExtraData(): array
@@ -126,5 +111,21 @@ abstract class BaseResponse
         if ($this->getInfoReturnCode() !== ReturnCodeDefinition::RETURN_CODE_SUCCESS) {
             throw new Exception($this->getInfoErrorMessage(), $this->getInfoReturnCode());
         }
+    }
+
+    /**
+     * @return int
+     */
+    public function getInfoReturnCode(): int
+    {
+        return $this->infoReturnCode;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInfoErrorMessage(): string
+    {
+        return $this->infoErrorMessage;
     }
 }

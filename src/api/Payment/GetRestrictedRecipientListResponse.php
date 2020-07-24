@@ -20,12 +20,12 @@ class GetRestrictedRecipientListResponse extends BaseResponse
     /**
      * @var NTRVLINFYComponent[]
      */
-    protected $recipientList=[];
+    protected $recipientList = [];
 
     /**
      * @var NTQRYRVLZComponent
      */
-    protected $operationInfo=[];
+    protected $operationInfo = [];
 
     /**
      * @return NTRVLINFYComponent[]
@@ -45,10 +45,10 @@ class GetRestrictedRecipientListResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTRVLINFY'){
-            $this->recipientList[]=new NTRVLINFYComponent($component);
-        } elseif ($component->getElementTag()==='NTQRYRVLZ'){
-            $this->operationInfo=new NTQRYRVLZComponent($component);
+        if ($component->getElementTag() === 'NTRVLINFY') {
+            $this->recipientList[] = new NTRVLINFYComponent($component);
+        } elseif ($component->getElementTag() === 'NTQRYRVLZ') {
+            $this->operationInfo = new NTQRYRVLZComponent($component);
         }
     }
 }

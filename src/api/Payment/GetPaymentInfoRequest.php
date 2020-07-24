@@ -17,15 +17,16 @@ class GetPaymentInfoRequest extends BaseRequest
 {
     public function __construct(string $loginName)
     {
-        parent::__construct($loginName,'NTSTLINF');
+        parent::__construct($loginName, 'NTSTLINF');
     }
 
     /**
      * @note 重复次数为1..500
      * @param string $requestNo
      * @return GetPaymentInfoRequest
-    */
-    public function addQueryComponent(string $requestNo){
+     */
+    public function addQueryComponent(string $requestNo)
+    {
         $this->appendComponent(new NTSTLINFXComponent($requestNo));
         return $this;
     }
