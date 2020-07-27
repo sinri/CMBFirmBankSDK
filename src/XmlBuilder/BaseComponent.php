@@ -16,7 +16,8 @@ abstract class BaseComponent
     /**
      * @var array
      */
-    protected $properties=[];
+
+    protected $properties = [];
 
     public function __isset($name)
     {
