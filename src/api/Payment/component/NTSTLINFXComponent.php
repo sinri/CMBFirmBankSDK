@@ -19,7 +19,7 @@ class NTSTLINFXComponent extends RequestComponent
      */
     public function __construct(string $requestNo)
     {
-        $this->REQNBR=$requestNo;
+        $this->REQNBR = $requestNo;
     }
 
     public function getTagName(): string

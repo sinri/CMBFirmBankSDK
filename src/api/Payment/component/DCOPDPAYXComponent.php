@@ -37,19 +37,29 @@ use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
  */
 class DCOPDPAYXComponent extends RequestComponent
 {
-    public function __construct(string $referenceNo, $billToAccount, $billToBranchBank, $transactionAmount,
-                                $currencyCode, $settlement, $usage, $bankFlag, $recipientAccount, $recipientName)
+    public function __construct(
+        string $referenceNo,
+        $billToAccount,
+        $billToBranchBank,
+        $transactionAmount,
+        $currencyCode,
+        $settlement,
+        $usage,
+        $bankFlag,
+        $recipientAccount,
+        $recipientName
+    )
     {
-        $this->YURREF=$referenceNo;
-        $this->DBTACC=$billToAccount;
-        $this->DBTBBK=$billToBranchBank;
-        $this->TRSAMT=$transactionAmount;
-        $this->CCYNBR=$currencyCode;
-        $this->STLCHN=$settlement;
-        $this->NUSAGE=$usage;
-        $this->BNKFLG=$bankFlag;
-        $this->CRTACC=$recipientAccount;
-        $this->CRTNAM=$recipientName;
+        $this->YURREF = $referenceNo;
+        $this->DBTACC = $billToAccount;
+        $this->DBTBBK = $billToBranchBank;
+        $this->TRSAMT = $transactionAmount;
+        $this->CCYNBR = $currencyCode;
+        $this->STLCHN = $settlement;
+        $this->NUSAGE = $usage;
+        $this->BNKFLG = $bankFlag;
+        $this->CRTACC = $recipientAccount;
+        $this->CRTNAM = $recipientName;
     }
 
     public function getTagName(): string

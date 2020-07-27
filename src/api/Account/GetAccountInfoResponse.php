@@ -31,8 +31,8 @@ class GetAccountInfoResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTQACINFZ'){
-            $this->accountInfoList[]=new NTQACINFZComponent($component);
+        if ($component->getElementTag() === 'NTQACINFZ') {
+            $this->accountInfoList[] = new NTQACINFZComponent($component);
         }
         // else: just ignore
     }

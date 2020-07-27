@@ -19,7 +19,7 @@ class GetHistoryBalanceInfoResponse extends BaseResponse
     /**
      * @var NTQABINFZComponent[]
      */
-    protected $balanceList=[];
+    protected $balanceList = [];
 
     /**
      * @return NTQABINFZComponent[]
@@ -31,8 +31,8 @@ class GetHistoryBalanceInfoResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTQABINFZ'){
-            $this->balanceList[]=new NTQABINFZComponent($component);
+        if ($component->getElementTag() === 'NTQABINFZ') {
+            $this->balanceList[] = new NTQABINFZComponent($component);
         }
         // else: just ignore
     }

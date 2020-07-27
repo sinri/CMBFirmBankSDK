@@ -17,7 +17,7 @@ use leqee\CMBFirmBankSDK\XmlBuilder\ResponseComponent;
  * @property string CRTBBK C(2) 收方分行号 @see <API DOC Appendix 1>
  * @property string CRTACC C(35) 收方帐号
  * @property string CRTNAM Z(122) 收方名称
- * @property string CCYNBR C(2) 币种 @see<API DOC Appendix 3>
+ * @property string CCYNBR C(2) 币种 @see <API DOC Appendix 3>
  * @property string TRSAMT M 交易金额
  * @property string EPTDAT D 期望日
  * @property string EPTTIM T 期望时间

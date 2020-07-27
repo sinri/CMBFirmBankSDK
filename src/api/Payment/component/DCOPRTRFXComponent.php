@@ -24,16 +24,23 @@ use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
  */
 class DCOPRTRFXComponent extends RequestComponent
 {
-    public function __construct(string $referenceNo, $billToAccount, $billToBranchBank, $transactionAmount,
-                                $currencyCode, $usage, $recipientAccount)
+    public function __construct(
+        string $referenceNo,
+        $billToAccount,
+        $billToBranchBank,
+        $transactionAmount,
+        $currencyCode,
+        $usage,
+        $recipientAccount
+    )
     {
-        $this->YURREF=$referenceNo;
-        $this->DBTACC=$billToAccount;
-        $this->DBTBBK=$billToBranchBank;
-        $this->TRSAMT=$transactionAmount;
-        $this->CCYNBR=$currencyCode;
-        $this->NUSAGE=$usage;
-        $this->CRTACC=$recipientAccount;
+        $this->YURREF = $referenceNo;
+        $this->DBTACC = $billToAccount;
+        $this->DBTBBK = $billToBranchBank;
+        $this->TRSAMT = $transactionAmount;
+        $this->CCYNBR = $currencyCode;
+        $this->NUSAGE = $usage;
+        $this->CRTACC = $recipientAccount;
     }
 
     public function getTagName(): string

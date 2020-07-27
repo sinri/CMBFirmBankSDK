@@ -22,7 +22,7 @@ class DirectPaymentRequest extends BaseRequest
      * @param string $businessCode
      * @param string $businessMode
      */
-    public function __construct(string $loginName, string $businessCode, string $businessMode='00001')
+    public function __construct(string $loginName, string $businessCode, string $businessMode = '00001')
     {
         parent::__construct($loginName, 'DCPAYMNT');
         $payRequest = new SDKPAYRQXComponent($businessMode);
@@ -34,8 +34,9 @@ class DirectPaymentRequest extends BaseRequest
      * @note 支付输入明细不超过 30 条，支付输出有 NTQPAYRQZ 数据;超过 30 条(30..1500)，则无
      * @param DCOPDPAYXComponent $payDetail
      * @return DirectPaymentRequest
-    */
-    public function addPayDetail(DCOPDPAYXComponent $payDetail){
+     */
+    public function addPayDetail(DCOPDPAYXComponent $payDetail)
+    {
         $this->appendComponent($payDetail);
         return $this;
     }

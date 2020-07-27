@@ -31,10 +31,11 @@ abstract class BaseComponent
 
     public function __set($name, $value)
     {
-        $this->properties[$name]=$value;
+        $this->properties[$name] = $value;
     }
 
-    public function toXMLElement(){
+    public function toXMLElement()
+    {
         $element = new ArkXMLElement($this->getTagName());
         foreach ($this->properties as $k => $v) {
 //            var_dump($k);

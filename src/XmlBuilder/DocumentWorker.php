@@ -44,8 +44,9 @@ class DocumentWorker
         return $this->rootElement;
     }
 
-    public function setInfoComponent($loginName,$functionName,$dataType=2,$extra=[]){
-        $infoElement=(new ArkXMLElement("INFO"))
+    public function setInfoComponent($loginName, $functionName, $dataType = 2, $extra = [])
+    {
+        $infoElement = (new ArkXMLElement("INFO"))
             ->appendSubElement(
                 (new ArkXMLElement("FUNNAM"))->appendText($functionName)
             )
@@ -55,8 +56,8 @@ class DocumentWorker
             ->appendSubElement(
                 (new ArkXMLElement("LGNNAM"))->appendText($loginName)
             );
-        if(is_array($extra) && !empty($extra)){
-            foreach ($extra as $key => $value){
+        if (is_array($extra) && !empty($extra)) {
+            foreach ($extra as $key => $value) {
                 $infoElement->appendSubElement(
                     (new ArkXMLElement($key))->appendText($value)
                 );

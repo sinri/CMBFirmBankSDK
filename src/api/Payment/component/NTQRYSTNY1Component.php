@@ -25,12 +25,12 @@ class NTQRYSTNY1Component extends RequestComponent
      * @param string $beginDate
      * @param string $endDate
      */
-    public function __construct(string $businessCode,string $businessMode,string $beginDate,string $endDate)
+    public function __construct(string $businessCode, string $businessMode, string $beginDate, string $endDate)
     {
-        $this->BUSCOD=$businessCode;
-        $this->BUSMOD=$businessMode;
-        $this->BGNDAT=$beginDate;
-        $this->ENDDAT=$endDate;
+        $this->BUSCOD = $businessCode;
+        $this->BUSMOD = $businessMode;
+        $this->BGNDAT = $beginDate;
+        $this->ENDDAT = $endDate;
     }
 
 

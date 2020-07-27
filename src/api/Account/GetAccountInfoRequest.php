@@ -17,11 +17,12 @@ class GetAccountInfoRequest extends BaseRequest
 {
     public function __construct(string $loginName)
     {
-        parent::__construct($loginName,'GetAccInfo');
+        parent::__construct($loginName, 'GetAccInfo');
     }
 
-    public function addQueryAccount(string $bankBranch,string $account){
-        $this->appendComponent(new SDKACINFXComponent($bankBranch,$account));
+    public function addQueryAccount(string $bankBranch, string $account)
+    {
+        $this->appendComponent(new SDKACINFXComponent($bankBranch, $account));
         return $this;
     }
 }

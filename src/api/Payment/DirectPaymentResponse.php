@@ -21,6 +21,7 @@ class DirectPaymentResponse extends BaseResponse
      */
     protected $paymentResultInfoList=[];
 
+
     /**
      * @return NTQPAYRQZComponent[]
      */

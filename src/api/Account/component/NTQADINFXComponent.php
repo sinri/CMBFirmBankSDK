@@ -14,10 +14,10 @@ use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
  */
 class NTQADINFXComponent extends RequestComponent
 {
-    public function __construct(string $bankBranch,string $account)
+    public function __construct(string $bankBranch, string $account)
     {
-        $this->BBKNBR=$bankBranch;
-        $this->ACCNBR=$account;
+        $this->BBKNBR = $bankBranch;
+        $this->ACCNBR = $account;
     }
 
     public function getTagName(): string

@@ -27,21 +27,23 @@ class SDKTSINFXComponent extends RequestComponent
      * @param string $beginDate
      * @param string $endDate
      */
-    public function __construct(string $bankBranch,string $account,string $beginDate,string $endDate)
+    public function __construct(string $bankBranch, string $account, string $beginDate, string $endDate)
     {
-        $this->BBKNBR=$bankBranch;
-        $this->ACCNBR=$account;
-        $this->BGNDAT=$beginDate;
-        $this->ENDDAT=$endDate;
+        $this->BBKNBR = $bankBranch;
+        $this->ACCNBR = $account;
+        $this->BGNDAT = $beginDate;
+        $this->ENDDAT = $endDate;
     }
 
-    public function setLowestAmount($value){
-        $this->LOWAMT=$value;
+    public function setLowestAmount($value)
+    {
+        $this->LOWAMT = $value;
         return $this;
     }
 
-    public function setHighestAmount($value){
-        $this->HGHAMT=$value;
+    public function setHighestAmount($value)
+    {
+        $this->HGHAMT = $value;
         return $this;
     }
 
