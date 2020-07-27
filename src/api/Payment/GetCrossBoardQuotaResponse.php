@@ -20,35 +20,35 @@ class GetCrossBoardQuotaResponse extends BaseResponse
     /**
      * @var NTCRBINQZComponent[]
      */
-    protected $crossBoardBankList=[];
+    protected $crossBoardBankInfoList=[];
 
     /**
      * @var NTCRBINQZ2Component[]
      */
-    protected $crossBoardBankInfo=[];
+    protected $crossBoardBankInfoList2=[];
 
     /**
      * @return NTCRBINQZComponent[]
      */
-    public function getCrossBoardBankList(): array
+    public function getCrossBoardBankInfoList(): array
     {
-        return $this->crossBoardBankList;
+        return $this->crossBoardBankInfoList;
     }
 
     /**
      * @return NTCRBINQZ2Component[]
      */
-    public function getCrossBoardBankInfo(): array
+    public function getCrossBoardBankInfoList2(): array
     {
-        return $this->crossBoardBankInfo;
+        return $this->crossBoardBankInfoList2;
     }
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
         if($component->getElementTag()==='NTCRBINQZ'){
-            $this->crossBoardBankList[]=new NTCRBINQZComponent($component);
+            $this->crossBoardBankInfoList[]=new NTCRBINQZComponent($component);
         } elseif ($component->getElementTag()==='NTCRBINQZ2'){
-            $this->crossBoardBankInfo[]=new NTCRBINQZ2Component($component);
+            $this->crossBoardBankInfoList2[]=new NTCRBINQZ2Component($component);
         }
     }
 }

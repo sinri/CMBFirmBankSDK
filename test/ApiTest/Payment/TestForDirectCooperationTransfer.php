@@ -66,7 +66,7 @@ class TestForDirectCooperationTransfer extends TestCase
         $this->assertNotFalse($xml);
 
         $response = (new DirectPaymentResponse($xml));
-        $payResults = $response->getPaymentResultInfo();
+        $payResults = $response->getPaymentResultInfoList();
         $this->assertIsArray($payResults);
         foreach ($payResults as $payResult) {
             $this->assertEquals('Payment', $payResult->getTagName());
