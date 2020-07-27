@@ -22,13 +22,13 @@ class SDKATDRQXComponent extends RequestComponent
     /**
      * NTPAYQYBY1Component constructor.
      * @param string $account
-     * @param string $depositor
+     * @param string $accountName
      * @param string $amount
      */
-    public function __construct(string $account,string $depositor,string $amount)
+    public function __construct(string $account,string $accountName,string $amount)
     {
         $this->ACCNBR=$account;
-        $this->CLTNAM=$depositor;
+        $this->CLTNAM=$accountName;
         $this->TRSAMT=$amount;
     }
 
