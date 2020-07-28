@@ -20,16 +20,16 @@ use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
 class SDKATDRQXComponent extends RequestComponent
 {
     /**
-     * NTPAYQYBY1Component constructor.
+     * SDKATDRQXComponent constructor.
      * @param string $account
      * @param string $accountName
      * @param string $amount
      */
     public function __construct(string $account,string $accountName,string $amount)
     {
-        $this->ACCNBR=$account;
-        $this->CLTNAM=$accountName;
-        $this->TRSAMT=$amount;
+        $this->ACCNBR = $account;
+        $this->CLTNAM = $accountName;
+        $this->TRSAMT = $amount;
     }
 
 

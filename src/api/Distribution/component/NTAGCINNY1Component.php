@@ -7,7 +7,7 @@ namespace leqee\CMBFirmBankSDK\api\Distribution\component;
 use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
 
 /**
- * Class SDKATSRQXComponent
+ * Class NTAGCINNY1Component
  * @package leqee\CMBFirmBankSDK\api\Distribution\component
  * @property string BUSCOD C(6) 业务类型 N03010:代发工资;N03020:代发;N03030:代扣
  * @property string BUSMOD C(5) 业务模式
@@ -27,10 +27,10 @@ class NTAGCINNY1Component extends RequestComponent
      */
     public function __construct(string $businessCode, string $businessMode, string $beginDate, string $endDate)
     {
-        $this->BUSCOD=$businessCode;
-        $this->BUSMOD=$businessMode;
-        $this->BGNDAT=$beginDate;
-        $this->ENDDAT=$endDate;
+        $this->BUSCOD = $businessCode;
+        $this->BUSMOD = $businessMode;
+        $this->BGNDAT = $beginDate;
+        $this->ENDDAT = $endDate;
     }
 
 

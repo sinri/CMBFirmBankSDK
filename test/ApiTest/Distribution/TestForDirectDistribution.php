@@ -32,7 +32,7 @@ class TestForDirectDistribution extends TestCase
         );
         $distributionDetail = new SDKATDRQXComponent('075512000038', '测试', '2.03');
         $distributionDetail->TRSDSP='工资';
-        $request->addDistributionDetail($distributionDetail);
+        $request->addDistributionItem($distributionDetail);
 
         $sampleXML = '<?xml version="1.0" encoding = "UTF-8"?> <CMBSDKPGK>
             <INFO> <FUNNAM>AgentRequest</FUNNAM> <DATTYP>2</DATTYP> <LGNNAM>PAY1</LGNNAM>
@@ -68,7 +68,7 @@ class TestForDirectDistribution extends TestCase
         $this->assertEquals('0', $response->getInfoReturnCode());
         $this->assertEquals('', $response->getInfoErrorMessage());
         $result = $response->getDistributionResult();
-        $this->assertEquals('AgentRequest', $result->getTagName());
+        $this->assertEquals('NTREQNBRY', $result->getTagName());
     }
 
     /**
@@ -87,8 +87,8 @@ class TestForDirectDistribution extends TestCase
             '银企直连网银互联1',
             $distributionRequest
         );
-        $distributionDetail = new SDKATDRQXComponent('account', 'depositor', 'amount');
-        $request->addDistributionDetail($distributionDetail);
+        $distributionItem = new SDKATDRQXComponent('account', 'depositor', 'amount');
+        $request->addDistributionItem($distributionItem);
 
         $client = MockedTestEnv::getHttpWebClient();
         $xml = $client->callForXML($request);

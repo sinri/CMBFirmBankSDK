@@ -32,7 +32,7 @@ class DirectDistributionRequest extends BaseRequest
      * @param SDKATDRQXComponent $distributionDetail
      * @return DirectDistributionRequest
      */
-    public function addDistributionDetail(SDKATDRQXComponent $distributionDetail){
+    public function addDistributionItem(SDKATDRQXComponent $distributionDetail){
         $this->appendComponent($distributionDetail);
         return $this;
     }

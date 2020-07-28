@@ -33,8 +33,8 @@ class TestForDirectPayment extends TestCase
             <INFO> <FUNNAM>DCPAYMNT</FUNNAM> <DATTYP>2</DATTYP> <LGNNAM>ZL01</LGNNAM>
             </INFO>
             <SDKPAYRQX>
-                <BUSCOD>N02031</BUSCOD>
                 <BUSMOD>00001</BUSMOD>
+                <BUSCOD>N02031</BUSCOD>
             </SDKPAYRQX>
             <DCOPDPAYX> 
                 <YURREF>APP060928001255</YURREF> <DBTACC>1280022310002</DBTACC> <DBTBBK>75</DBTBBK> <TRSAMT>1.01</TRSAMT> 

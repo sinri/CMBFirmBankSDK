@@ -33,7 +33,7 @@ abstract class BaseRequest
     /**
      * @var RequestComponent[]
      */
-    protected $components;
+    protected $components = [];
 
     public function __construct($loginName, $functionName, $extraData = [])
     {
