@@ -57,7 +57,7 @@ class TestForGetCrossBoardQuota extends TestCase
         $this->assertEquals('2', $response->getInfoDataType());
         $this->assertEquals('0', $response->getInfoReturnCode());
         $this->assertEquals('', $response->getInfoErrorMessage());
-        $crossBoardBanks = $response->getCrossBoardBankList();
+        $crossBoardBanks = $response->getCrossBoardBankInfoList();
         //var_dump($crossBoardBanks);
         foreach ($crossBoardBanks as $crossBoardBank) {
             $this->assertEquals('NTCRBINQZ', $crossBoardBank->getTagName());
@@ -80,7 +80,7 @@ class TestForGetCrossBoardQuota extends TestCase
         $this->assertNotFalse($xml);
 
         $response = (new GetCrossBoardQuotaResponse($xml));
-        $crossBoardBanks = $response->getCrossBoardBankList();
+        $crossBoardBanks = $response->getCrossBoardBankInfoList();
         $this->assertIsArray($crossBoardBanks);
         //var_dump($crossBoardBanks);
         //var_dump($response->getCrossBoardBankInfo());
