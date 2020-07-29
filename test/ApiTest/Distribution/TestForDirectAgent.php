@@ -6,13 +6,13 @@ namespace leqee\CMBFirmBankSDK\test\ApiTest\Distribution;
 
 use leqee\CMBFirmBankSDK\api\Distribution\component\SDKATDRQXComponent;
 use leqee\CMBFirmBankSDK\api\Distribution\component\SDKATSRQXComponent;
-use leqee\CMBFirmBankSDK\api\Distribution\DirectDistributionRequest;
-use leqee\CMBFirmBankSDK\api\Distribution\DirectDistributionResponse;
+use leqee\CMBFirmBankSDK\api\Distribution\DirectAgentRequest;
+use leqee\CMBFirmBankSDK\api\Distribution\DirectAgentResponse;
 use leqee\CMBFirmBankSDK\test\ApiTest\MockedTestEnv;
 use PHPUnit\Framework\TestCase;
 use Exception;
 
-class TestForDirectDistribution extends TestCase
+class TestForDirectAgent extends TestCase
 {
     /**
      * @throws Exception
@@ -26,7 +26,7 @@ class TestForDirectDistribution extends TestCase
         $distributionRequest->DMANBR = '000001';
         $distributionRequest->GRTFLG = 'Y';
 
-        $request = new DirectDistributionRequest(
+        $request = new DirectAgentRequest(
             'PAY1',
             $distributionRequest
         );
@@ -62,7 +62,7 @@ class TestForDirectDistribution extends TestCase
             </NTREQNBRY>
         </CMBSDKPGK>
         ';
-        $response = (new DirectDistributionResponse($responseXML));
+        $response = (new DirectAgentResponse($responseXML));
         $this->assertEquals('AgentRequest', $response->getInfoFunctionName());
         $this->assertEquals('2', $response->getInfoDataType());
         $this->assertEquals('0', $response->getInfoReturnCode());
@@ -83,7 +83,7 @@ class TestForDirectDistribution extends TestCase
         $distributionRequest = new SDKATSRQXComponent('businessCode','businessMode',
             'transactionType', 'account', 'branchBank','sum', 'total',
             'referenceNo', 'memo');
-        $request = new DirectDistributionRequest(
+        $request = new DirectAgentRequest(
             '银企直连网银互联1',
             $distributionRequest
         );
@@ -94,7 +94,7 @@ class TestForDirectDistribution extends TestCase
         $xml = $client->callForXML($request);
         $this->assertNotFalse($xml);
 
-        $response = (new DirectDistributionResponse($xml));
+        $response = (new DirectAgentResponse($xml));
         $result = $response->getDistributionResult();
         $this->assertEquals('AgentRequest', $result->getTagName());
     }

@@ -7,7 +7,7 @@ namespace leqee\CMBFirmBankSDK\api\Distribution\component;
 use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
 
 /**
- * Class NTAGCDTLY1Component
+ * Class NTAGCDTLY1ComponentForRequest
  * @package leqee\CMBFirmBankSDK\api\Distribution\component
  * @property string TRXSEQ C(8) 交易序号 客户自行保证批次范围内的序号唯一性
  * @property string ACCNBR C(35) 账号
@@ -22,7 +22,7 @@ use leqee\CMBFirmBankSDK\XmlBuilder\RequestComponent;
  * @property string CPRACT C(20) [optional] 客户代码 以前代扣将合作方帐号填到注释字段里, 现在可以改为填到这个字段
  * @property string CPRREF C(20) [optional] 合作方流水号
  */
-class NTAGCDTLY1Component extends RequestComponent
+class NTAGCDTLY1ComponentForRequest extends RequestComponent
 {
     /**
      * NTAGCDTLY1Component constructor.

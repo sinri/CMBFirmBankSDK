@@ -9,15 +9,15 @@ use leqee\CMBFirmBankSDK\api\Distribution\component\SDKATDRQXComponent;
 use leqee\CMBFirmBankSDK\api\Distribution\component\SDKATSRQXComponent;
 
 /**
- * Class DirectDistributionRequest
+ * Class DirectAgentRequest
  * @package leqee\CMBFirmBankSDK\api\Distribution
  * 直接代发代扣
  * @version 5.37.0 - 4.2
  */
-class DirectDistributionRequest extends BaseRequest
+class DirectAgentRequest extends BaseRequest
 {
     /**
-     * DirectDistributionRequest constructor.
+     * DirectAgentRequest constructor.
      * @param string $loginName
      * @param SDKATSRQXComponent $distributionRequest
      */
@@ -30,7 +30,7 @@ class DirectDistributionRequest extends BaseRequest
     /**
      * @note 直接代发代扣明细输入 1..6000 条
      * @param SDKATDRQXComponent $distributionDetail
-     * @return DirectDistributionRequest
+     * @return DirectAgentRequest
      */
     public function addDistributionItem(SDKATDRQXComponent $distributionDetail){
         $this->appendComponent($distributionDetail);

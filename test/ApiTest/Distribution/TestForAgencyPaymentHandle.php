@@ -5,14 +5,14 @@ namespace leqee\CMBFirmBankSDK\test\ApiTest\Distribution;
 
 
 use leqee\CMBFirmBankSDK\api\Distribution\component\NTAGCAGCX1Component;
-use leqee\CMBFirmBankSDK\api\Distribution\component\NTAGCDTLY1Component;
-use leqee\CMBFirmBankSDK\api\Distribution\BatchDistributionHandleRequest;
-use leqee\CMBFirmBankSDK\api\Distribution\BatchDistributionHandleResponse;
+use leqee\CMBFirmBankSDK\api\Distribution\component\NTAGCDTLY1ComponentForRequest;
+use leqee\CMBFirmBankSDK\api\Distribution\AgencyPaymentHandleRequest;
+use leqee\CMBFirmBankSDK\api\Distribution\AgencyPaymentHandleResponse;
 use leqee\CMBFirmBankSDK\test\ApiTest\MockedTestEnv;
 use PHPUnit\Framework\TestCase;
 use Exception;
 
-class TestForBatchDistributionHandle extends TestCase
+class TestForAgencyPaymentHandle extends TestCase
 {
     /**
      * @throws Exception
@@ -24,11 +24,11 @@ class TestForBatchDistributionHandle extends TestCase
             '755900008010306','0','BYBC','代发劳务收入','DF201504021051001');
         $handleRequest->GRTFLG = 'Y';
 
-        $request = new BatchDistributionHandleRequest(
+        $request = new AgencyPaymentHandleRequest(
             'PAY1',
             '00001', $handleRequest
         );
-        $handleItem = new NTAGCDTLY1Component('00000001', '769900155110603', '同业代理清算户',
+        $handleItem = new NTAGCDTLY1ComponentForRequest('00000001', '769900155110603', '同业代理清算户',
                 '100', 'Y');
         $request->addHandleItem($handleItem);
 
@@ -62,7 +62,7 @@ class TestForBatchDistributionHandle extends TestCase
             </NTAGCAGCZ1>
         </CMBSDKPGK>
         ';
-        $response = (new BatchDistributionHandleResponse($responseXML));
+        $response = (new AgencyPaymentHandleResponse($responseXML));
         $this->assertEquals('NTAGCAPY', $response->getInfoFunctionName());
         $this->assertEquals('2', $response->getInfoDataType());
         $this->assertEquals('0', $response->getInfoReturnCode());
@@ -86,11 +86,11 @@ class TestForBatchDistributionHandle extends TestCase
             'totalCount', 'totalNo', 'currentAmount','currentCount',
             'currencyCode', 'branchBank', 'account','currencyMarket',
             'transactionType','usage','referenceNo');
-        $request = new BatchDistributionHandleRequest(
+        $request = new AgencyPaymentHandleRequest(
             '银企直连网银互联1',
             'businessMode', $handleRequest
         );
-        $handleItem = new NTAGCDTLY1Component('transactionNo', 'account', 'accountName',
+        $handleItem = new NTAGCDTLY1ComponentForRequest('transactionNo', 'account', 'accountName',
             'amount', 'bankFlag');
         $request->addHandleItem($handleItem);
 
@@ -98,7 +98,7 @@ class TestForBatchDistributionHandle extends TestCase
         $xml = $client->callForXML($request);
         $this->assertNotFalse($xml);
 
-        $response = (new BatchDistributionHandleResponse($xml));
+        $response = (new AgencyPaymentHandleResponse($xml));
         $result = $response->getHandleResult();
         $this->assertEquals('NTAGCAGCZ1', $result->getTagName());
         $this->assertNotEmpty($result->REQNBR && $result->REQSTA);

@@ -9,12 +9,12 @@ use leqee\CMBFirmBankSDK\api\Distribution\component\NTREQNBRYComponent;
 use sinri\ark\xml\entity\ArkXMLElement;
 
 /**
- * Class DirectDistributionResponse
+ * Class DirectAgentResponse
  * @package leqee\CMBFirmBankSDK\api\Distribution
  * 直接代发代扣
  * @version 5.37.0 - 4.2
  */
-class DirectDistributionResponse extends BaseResponse
+class DirectAgentResponse extends BaseResponse
 {
     /**
      * @var NTREQNBRYComponent

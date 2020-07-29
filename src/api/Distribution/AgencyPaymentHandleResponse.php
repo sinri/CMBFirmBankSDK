@@ -9,12 +9,12 @@ use leqee\CMBFirmBankSDK\api\Distribution\component\NTAGCAGCZ1Component;
 use sinri\ark\xml\entity\ArkXMLElement;
 
 /**
- * Class BatchDistributionHandleResponse
+ * Class AgencyPaymentHandleResponse
  * @package leqee\CMBFirmBankSDK\api\Distribution
  * 大批量代发经办
  * @version 5.37.0 - 4.7
  */
-class BatchDistributionHandleResponse extends BaseResponse
+class AgencyPaymentHandleResponse extends BaseResponse
 {
     /**
      * @var NTAGCAGCZ1Component
