@@ -16,7 +16,7 @@ use leqee\CMBFirmBankSDK\api\Distribution\component\NTAGDINFY1ComponentForReques
 class GetAgentDetailInfoRequest extends BaseRequest
 {
     /**
-     * GetAgentTypeRequest constructor.
+     * GetAgentDetailInfoRequest constructor.
      * @param string $loginName
      * @param string $requestNo
      */

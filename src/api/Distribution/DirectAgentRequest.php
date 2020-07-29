@@ -19,21 +19,21 @@ class DirectAgentRequest extends BaseRequest
     /**
      * DirectAgentRequest constructor.
      * @param string $loginName
-     * @param SDKATSRQXComponent $distributionRequest
+     * @param SDKATSRQXComponent $agentRequest
      */
-    public function __construct(string $loginName, SDKATSRQXComponent $distributionRequest)
+    public function __construct(string $loginName, SDKATSRQXComponent $agentRequest)
     {
         parent::__construct($loginName, 'AgentRequest');
-        $this->appendComponent($distributionRequest);
+        $this->appendComponent($agentRequest);
     }
 
     /**
      * @note 直接代发代扣明细输入 1..6000 条
-     * @param SDKATDRQXComponent $distributionDetail
+     * @param SDKATDRQXComponent $agentDetail
      * @return DirectAgentRequest
      */
-    public function addDistributionItem(SDKATDRQXComponent $distributionDetail){
-        $this->appendComponent($distributionDetail);
+    public function addAgentItem(SDKATDRQXComponent $agentDetail){
+        $this->appendComponent($agentDetail);
         return $this;
     }
 }

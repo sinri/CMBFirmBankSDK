@@ -20,36 +20,36 @@ class GetAgentDetailInfoResponse extends BaseResponse
     /**
      * @var NTAGCDTLY1ComponentForResponse[]
      */
-    protected $distributionDetailList=[];
+    protected $agentDetailList=[];
 
     /**
      * @return NTAGCDTLY1ComponentForResponse[]
      */
-    public function getDistributionDetailList(): array
+    public function getAgentDetailList(): array
     {
-        return $this->distributionDetailList;
+        return $this->agentDetailList;
     }
 
     /**
      * @var NTAGDINFY1ComponentForResponse
      */
-    protected $distributionDetailInfo;
+    protected $agentDetailInfo;
 
     /**
      * @note 明细超过 1000 笔时返回
      * @return NTAGDINFY1ComponentForResponse
      */
-    public function getDistributionDetailInfo()
+    public function getAgentDetailInfo()
     {
-        return $this->distributionDetailInfo;
+        return $this->agentDetailInfo;
     }
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
         if ($component->getElementTag() === 'NTAGCDTLY1') {
-            $this->distributionDetailList[] = new NTAGCDTLY1ComponentForResponse($component);
+            $this->agentDetailList[] = new NTAGCDTLY1ComponentForResponse($component);
         } elseif ($component->getElementTag() === 'NTAGDINFY1') {
-            $this->distributionDetailInfo = new NTAGDINFY1ComponentForResponse($component);
+            $this->agentDetailInfo = new NTAGDINFY1ComponentForResponse($component);
         }
     }
 }

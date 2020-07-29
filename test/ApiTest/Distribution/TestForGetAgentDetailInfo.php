@@ -48,10 +48,10 @@ class TestForGetAgentDetailInfo extends TestCase
         $this->assertEquals('2', $response->getInfoDataType());
         $this->assertEquals('0', $response->getInfoReturnCode());
         $this->assertEquals('', $response->getInfoErrorMessage());
-        $distributionDetails = $response->getDistributionDetailList();
-        foreach ($distributionDetails as $distributionDetail){
-            $this->assertEquals('NTAGCDTLY1', $distributionDetail->getTagName());
-            $this->assertNotEmpty($distributionDetail->TRXSEQ && $distributionDetail->ACCNBR && $distributionDetail->TRSAMT);
+        $agentDetails = $response->getAgentDetailList();
+        foreach ($agentDetails as $agentDetail){
+            $this->assertEquals('NTAGCDTLY1', $agentDetail->getTagName());
+            $this->assertNotEmpty($agentDetail->TRXSEQ && $agentDetail->ACCNBR && $agentDetail->TRSAMT);
         }
     }
 
@@ -75,11 +75,11 @@ class TestForGetAgentDetailInfo extends TestCase
         $this->assertNotFalse($xml);
 
         $response = (new GetAgentDetailInfoResponse($xml));
-        $distributionDetails = $response->getDistributionDetailList();
-        $this->assertIsArray($distributionDetails);
-        foreach ($distributionDetails as $distributionDetail){
-            $this->assertEquals('NTAGCDTLY1', $distributionDetail->getTagName());
-            $this->assertNotEmpty($distributionDetail->TRXSEQ && $distributionDetail->ACCNBR && $distributionDetail->TRSAMT);
+        $agentDetails = $response->getAgentDetailList();
+        $this->assertIsArray($agentDetails);
+        foreach ($agentDetails as $agentDetail){
+            $this->assertEquals('NTAGCDTLY1', $agentDetail->getTagName());
+            $this->assertNotEmpty($agentDetail->TRXSEQ && $agentDetail->ACCNBR && $agentDetail->TRSAMT);
         }
     }
 }

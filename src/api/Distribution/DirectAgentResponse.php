@@ -19,18 +19,18 @@ class DirectAgentResponse extends BaseResponse
     /**
      * @var NTREQNBRYComponent
      */
-    protected $distributionResult;
+    protected $agentResult;
 
     /**
      * @return NTREQNBRYComponent
      */
-    public function getDistributionResult()
+    public function getAgentResult()
     {
-        return $this->distributionResult;
+        return $this->agentResult;
     }
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        $this->distributionResult = new NTREQNBRYComponent($component);
+        $this->agentResult = new NTREQNBRYComponent($component);
     }
 }

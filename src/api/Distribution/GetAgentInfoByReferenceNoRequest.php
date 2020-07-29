@@ -16,7 +16,7 @@ use leqee\CMBFirmBankSDK\api\Distribution\component\NTAGCINYX1Component;
 class GetAgentInfoByReferenceNoRequest extends BaseRequest
 {
     /**
-     * GetAgentTypeRequest constructor.
+     * GetAgentInfoByReferenceNoRequest constructor.
      * @param string $loginName
      * @param NTAGCINYX1Component $queryComponent
      */
