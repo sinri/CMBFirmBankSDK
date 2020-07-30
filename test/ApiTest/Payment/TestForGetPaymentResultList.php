@@ -67,10 +67,10 @@ class TestForGetPaymentResultList extends TestCase
         $this->assertEquals('2', $response->getInfoDataType());
         $this->assertEquals('0', $response->getInfoReturnCode());
         $this->assertEquals('', $response->getInfoErrorMessage());
-        $payResultList = $response->getPaymentResultList();
-        foreach ($payResultList as $payResult) {
-            $this->assertEquals('NTSTLLSTZ', $payResult->getTagName());
-            $this->assertTrue($payResult->DBTACC && $payResult->CRTACC && $payResult->TRSAMT && $payResult->CCYNBR);
+        $results = $response->getResultList();
+        foreach ($results as $result) {
+            $this->assertEquals('NTSTLLSTZ', $result->getTagName());
+            $this->assertTrue($result->DBTACC && $result->CRTACC && $result->TRSAMT && $result->CCYNBR);
         }
     }
 
@@ -94,11 +94,11 @@ class TestForGetPaymentResultList extends TestCase
         $this->assertNotFalse($xml);
 
         $response = (new GetPaymentResultListResponse($xml));
-        $payResults = $response->getPaymentResultList();
-        $this->assertIsArray($payResults);
-        foreach ($payResults as $payResult) {
-            $this->assertEquals('NTSTLLSTZ', $payResult->getTagName());
-            $this->assertTrue($payResult->DBTACC && $payResult->CRTACC && $payResult->TRSAMT && $payResult->CCYNBR);
+        $results = $response->getResultList();
+        $this->assertIsArray($results);
+        foreach ($results as $result) {
+            $this->assertEquals('NTSTLLSTZ', $result->getTagName());
+            $this->assertTrue($result->DBTACC && $result->CRTACC && $result->TRSAMT && $result->CCYNBR);
         }
     }
 }

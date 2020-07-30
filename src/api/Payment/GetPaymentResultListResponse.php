@@ -19,20 +19,20 @@ class GetPaymentResultListResponse extends BaseResponse
     /**
      * @var NTSTLLSTZComponent[]
      */
-    protected $paymentResultList = [];
+    protected $resultList = [];
 
     /**
      * @return NTSTLLSTZComponent[]
      */
-    public function getPaymentResultList(): array
+    public function getResultList(): array
     {
-        return $this->paymentResultList;
+        return $this->resultList;
     }
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
         if ($component->getElementTag() === 'NTSTLLSTZ') {
-            $this->paymentResultList[] = new NTSTLLSTZComponent($component);
+            $this->resultList[] = new NTSTLLSTZComponent($component);
         }
     }
 }

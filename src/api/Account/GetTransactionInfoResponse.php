@@ -31,6 +31,8 @@ class GetTransactionInfoResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        $this->transactionList[] = new NTQTSINFZComponent($component);
+        if ($component->getElementTag() === 'NTQTSINFZ') {
+            $this->transactionList[] = new NTQTSINFZComponent($component);
+        }
     }
 }

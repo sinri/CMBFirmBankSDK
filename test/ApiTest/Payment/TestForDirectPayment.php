@@ -63,7 +63,7 @@ class TestForDirectPayment extends TestCase
         $this->assertEquals('2', $response->getInfoDataType());
         $this->assertEquals('0', $response->getInfoReturnCode());
         $this->assertEquals('', $response->getInfoErrorMessage());
-        $payResults = $response->getPaymentResultInfoList();
+        $payResults = $response->getPaymentResultList();
         foreach ($payResults as $payResult) {
             $this->assertSame('NTE', $payResult->REQSTS);
         }
@@ -94,7 +94,7 @@ class TestForDirectPayment extends TestCase
         $this->assertNotFalse($xml);
 
         $response = (new DirectPaymentResponse($xml));
-        $payResults = $response->getPaymentResultInfoList();
+        $payResults = $response->getPaymentResultList();
         $this->assertIsArray($payResults);
         foreach ($payResults as $payResult) {
             $this->assertEquals('Payment', $payResult->getTagName());

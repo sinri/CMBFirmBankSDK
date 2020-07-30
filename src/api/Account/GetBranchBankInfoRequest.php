@@ -15,7 +15,7 @@ use leqee\CMBFirmBankSDK\api\Basement\BaseRequest;
  */
 class GetBranchBankInfoRequest extends BaseRequest
 {
-    public function __construct(string $loginName, string $account = null)
+    public function __construct(string $loginName, string $account = '')
     {
         parent::__construct($loginName, 'GetBbkInfo');
         if ($account) $this->appendComponent(new NTACCBBKYComponent($account));
