@@ -8,15 +8,15 @@ use leqee\CMBFirmBankSDK\api\Basement\BaseRequest;
 use leqee\CMBFirmBankSDK\api\Distribution\component\NTAGTLS2XComponent;
 
 /**
- * Class GetAgentListRequest
+ * Class GetAgentTypeRequest
  * @package leqee\CMBFirmBankSDK\api\Distribution
  * 查询交易代码
  * @version 5.37.0 - 4.1
  */
-class GetAgentListRequest extends BaseRequest
+class GetAgentTypeRequest extends BaseRequest
 {
     /**
-     * GetPaymentResultListRequest constructor.
+     * GetAgentTypeRequest constructor.
      * @param string $loginName
      * @param NTAGTLS2XComponent $queryComponent
      */

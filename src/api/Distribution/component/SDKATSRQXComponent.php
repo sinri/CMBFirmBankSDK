@@ -32,15 +32,15 @@ class SDKATSRQXComponent extends RequestComponent
     public function __construct($businessCode, $businessMode, $transactionType, $account, $branchBank,
                                 $sum, $total, $referenceNo, $memo)
     {
-        $this->BUSCOD=$businessCode;
-        $this->BUSMOD=$businessMode;
-        $this->TRSTYP=$transactionType;
-        $this->DBTACC=$account;
-        $this->BBKNBR=$branchBank;
-        $this->SUM=$sum;
-        $this->TOTAL=$total;
-        $this->YURREF=$referenceNo;
-        $this->MEMO=$memo;
+        $this->BUSCOD = $businessCode;
+        $this->BUSMOD = $businessMode;
+        $this->TRSTYP = $transactionType;
+        $this->DBTACC = $account;
+        $this->BBKNBR = $branchBank;
+        $this->SUM = $sum;
+        $this->TOTAL = $total;
+        $this->YURREF = $referenceNo;
+        $this->MEMO = $memo;
     }
 
     public function getTagName(): string

@@ -23,8 +23,8 @@ class NTAGTLS2XComponent extends RequestComponent
      */
     public function __construct(string $businessCode, string $account)
     {
-        $this->BUSCOD=$businessCode;
-        $this->ACCNBR=$account;
+        $this->BUSCOD = $businessCode;
+        $this->ACCNBR = $account;
     }
 
 

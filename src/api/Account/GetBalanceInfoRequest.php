@@ -20,6 +20,12 @@ class GetBalanceInfoRequest extends BaseRequest
         parent::__construct($loginName, 'NTQADINF');
     }
 
+    /**
+     * @note 多账户个数 1..30
+     * @param string $bankBranch
+     * @param string $account
+     * @return GetBalanceInfoRequest
+    */
     public function addQueryAccount(string $bankBranch, string $account)
     {
         $this->appendComponent(new NTQADINFXComponent($bankBranch, $account));

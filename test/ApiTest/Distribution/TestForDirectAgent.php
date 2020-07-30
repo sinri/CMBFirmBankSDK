@@ -6,33 +6,33 @@ namespace leqee\CMBFirmBankSDK\test\ApiTest\Distribution;
 
 use leqee\CMBFirmBankSDK\api\Distribution\component\SDKATDRQXComponent;
 use leqee\CMBFirmBankSDK\api\Distribution\component\SDKATSRQXComponent;
-use leqee\CMBFirmBankSDK\api\Distribution\DirectDistributionRequest;
-use leqee\CMBFirmBankSDK\api\Distribution\DirectDistributionResponse;
+use leqee\CMBFirmBankSDK\api\Distribution\DirectAgentRequest;
+use leqee\CMBFirmBankSDK\api\Distribution\DirectAgentResponse;
 use leqee\CMBFirmBankSDK\test\ApiTest\MockedTestEnv;
 use PHPUnit\Framework\TestCase;
 use Exception;
 
-class TestForDirectDistribution extends TestCase
+class TestForDirectAgent extends TestCase
 {
     /**
      * @throws Exception
      */
     public function testGenerateRequestXML()
     {
-        $distributionRequest = new SDKATSRQXComponent('N03020','00001','BYBC',
+        $agentRequest = new SDKATSRQXComponent('N03020','00001','BYBC',
             '755900008010306', '69','2.03', '1', 'TEST201501290922', '代发工资测试');
-        $distributionRequest->EPTDAT = '20150129';
-        $distributionRequest->CCYNBR = '10';
-        $distributionRequest->DMANBR = '000001';
-        $distributionRequest->GRTFLG = 'Y';
+        $agentRequest->EPTDAT = '20150129';
+        $agentRequest->CCYNBR = '10';
+        $agentRequest->DMANBR = '000001';
+        $agentRequest->GRTFLG = 'Y';
 
-        $request = new DirectDistributionRequest(
+        $request = new DirectAgentRequest(
             'PAY1',
-            $distributionRequest
+            $agentRequest
         );
-        $distributionDetail = new SDKATDRQXComponent('075512000038', '测试', '2.03');
-        $distributionDetail->TRSDSP='工资';
-        $request->addDistributionDetail($distributionDetail);
+        $agentDetail = new SDKATDRQXComponent('075512000038', '测试', '2.03');
+        $agentDetail->TRSDSP='工资';
+        $request->addAgentItem($agentDetail);
 
         $sampleXML = '<?xml version="1.0" encoding = "UTF-8"?> <CMBSDKPGK>
             <INFO> <FUNNAM>AgentRequest</FUNNAM> <DATTYP>2</DATTYP> <LGNNAM>PAY1</LGNNAM>
@@ -62,13 +62,13 @@ class TestForDirectDistribution extends TestCase
             </NTREQNBRY>
         </CMBSDKPGK>
         ';
-        $response = (new DirectDistributionResponse($responseXML));
+        $response = (new DirectAgentResponse($responseXML));
         $this->assertEquals('AgentRequest', $response->getInfoFunctionName());
         $this->assertEquals('2', $response->getInfoDataType());
         $this->assertEquals('0', $response->getInfoReturnCode());
         $this->assertEquals('', $response->getInfoErrorMessage());
-        $result = $response->getDistributionResult();
-        $this->assertEquals('AgentRequest', $result->getTagName());
+        $result = $response->getAgentResult();
+        $this->assertEquals('NTREQNBRY', $result->getTagName());
     }
 
     /**
@@ -80,22 +80,22 @@ class TestForDirectDistribution extends TestCase
             $this->assertTrue(MockedTestEnv::ignoreOnlineTests());
             return;
         }
-        $distributionRequest = new SDKATSRQXComponent('businessCode','businessMode',
+        $agentRequest = new SDKATSRQXComponent('businessCode','businessMode',
             'transactionType', 'account', 'branchBank','sum', 'total',
             'referenceNo', 'memo');
-        $request = new DirectDistributionRequest(
+        $request = new DirectAgentRequest(
             '银企直连网银互联1',
-            $distributionRequest
+            $agentRequest
         );
-        $distributionDetail = new SDKATDRQXComponent('account', 'depositor', 'amount');
-        $request->addDistributionDetail($distributionDetail);
+        $agentItem = new SDKATDRQXComponent('account', 'depositor', 'amount');
+        $request->addAgentItem($agentItem);
 
         $client = MockedTestEnv::getHttpWebClient();
         $xml = $client->callForXML($request);
         $this->assertNotFalse($xml);
 
-        $response = (new DirectDistributionResponse($xml));
-        $result = $response->getDistributionResult();
+        $response = (new DirectAgentResponse($xml));
+        $result = $response->getAgentResult();
         $this->assertEquals('AgentRequest', $result->getTagName());
     }
 }

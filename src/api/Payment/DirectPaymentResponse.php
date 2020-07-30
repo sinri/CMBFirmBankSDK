@@ -19,21 +19,21 @@ class DirectPaymentResponse extends BaseResponse
     /**
      * @var NTQPAYRQZComponent[]
      */
-    protected $paymentResultInfoList=[];
+    protected $paymentResultList=[];
 
 
     /**
      * @return NTQPAYRQZComponent[]
      */
-    public function getPaymentResultInfoList(): array
+    public function getPaymentResultList(): array
     {
-        return $this->paymentResultInfoList;
+        return $this->paymentResultList;
     }
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
         if($component->getElementTag()==='NTQPAYRQZ'){
-            $this->paymentResultInfoList[]=new NTQPAYRQZComponent($component);
+            $this->paymentResultList[]=new NTQPAYRQZComponent($component);
         }
         // else: just ignore
     }

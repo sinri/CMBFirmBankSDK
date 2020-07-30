@@ -9,28 +9,28 @@ use leqee\CMBFirmBankSDK\api\Distribution\component\NTREQNBRYComponent;
 use sinri\ark\xml\entity\ArkXMLElement;
 
 /**
- * Class DirectDistributionResponse
+ * Class DirectAgentResponse
  * @package leqee\CMBFirmBankSDK\api\Distribution
  * 直接代发代扣
  * @version 5.37.0 - 4.2
  */
-class DirectDistributionResponse extends BaseResponse
+class DirectAgentResponse extends BaseResponse
 {
     /**
      * @var NTREQNBRYComponent
      */
-    protected $distributionResult;
+    protected $agentResult;
 
     /**
      * @return NTREQNBRYComponent
      */
-    public function getDistributionResult()
+    public function getAgentResult()
     {
-        return $this->distributionResult;
+        return $this->agentResult;
     }
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        $this->distributionResult = new NTREQNBRYComponent($component);
+        $this->agentResult = new NTREQNBRYComponent($component);
     }
 }

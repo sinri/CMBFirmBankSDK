@@ -13,9 +13,13 @@ use leqee\CMBFirmBankSDK\XmlBuilder\ResponseComponent;
  * @property string ETYTIM T Transaction Occurring Time, only HOUR available
  * @property string VLTDAT D [optional] 起息日
  * @property string TRSCOD C(8) [optional] 交易类型 @see <API DOC Appendix 9>
- * @property string NARYUR Z(62) [optional] 若为企业银行客户端经办的交易，则该字段为用途信息(4.0 版代发代扣业务除外)。若为其它渠道经办的交易，则该字段为交易的简单说明和注解。
- * @property string TRSAMTD M [optional] 借方金额 企业为借方时的 交易金额(正数)
- * @property string TRSAMTC M [optional] 贷方金额 企业为贷方时的 交易金额(正数)
+ * @property string NARYUR Z(62) [optional] 摘要 若为企业银行客户端经办的交易，则该字段为用途信息(4.0 版代发代扣业务除外)。若为其它渠道经办的交易，则该字段为交易的简单说明和注解。
+ * @property string TRSAMT M 交易金额
+ * @property string C_TRSAMT M 交易金额
+ * @property string TRSAMTD M [optional] 借方金额 企业为借方时的交易金额(正数)
+ * @property string C_TRSAMTD M [optional] 借方金额
+ * @property string TRSAMTC M [optional] 贷方金额 企业为贷方时的交易金额(正数)
+ * @property string C_TRSAMTC M [optional] 贷方金额
  * @property string AMTCDR C(1) 借贷标记 C:贷;D:借
  * @property string TRSBLV M [optional] 余额 帐户的联机余额
  * @property string REFNBR C(15) 银行会计系统交易流水号
