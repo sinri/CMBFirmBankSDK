@@ -32,9 +32,17 @@ abstract class BaseResponse
      */
     protected $infoExtraData = [];
 
+    /**
+     * BaseResponse constructor.
+     * @param string $xml
+     * @throws Exception when given XML is not available
+     */
     public function __construct(string $xml)
     {
         $rootElement = ArkXMLReader::simplyParseXMLToElement($xml);
+        if ($rootElement === false) {
+            throw new Exception("Invalid XML received for response: " . $xml);
+        }
 
         $components = $rootElement->getAllSubElements();
         foreach ($components as $component) {
