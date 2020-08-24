@@ -11,7 +11,7 @@
   ],
   "require": {
     "sinri/ark-xml": "~0.4",
-    "sinri/ark-curl": "~2.0"
+    "sinri/ark-curl": "~2.1"
   },
   "autoload": {
     "psr-4": {

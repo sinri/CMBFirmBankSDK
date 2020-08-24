@@ -142,7 +142,6 @@ abstract class BaseRequest
     }
 
     /**
-     * @param string $encoding GBK, UTF-8, BIG5, etc.
      * @return string
      * @throws Exception
      */
