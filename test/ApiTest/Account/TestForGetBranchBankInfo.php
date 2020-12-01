@@ -81,5 +81,4 @@ class TestForGetBranchBankInfo extends TestCase
             $this->assertTrue($branchBank->BBKNBR && $branchBank->C_BBKNBR && $branchBank->ACCNBR);
         }
     }
-
 }
