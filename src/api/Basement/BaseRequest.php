@@ -13,19 +13,19 @@ abstract class BaseRequest
     /**
      * @var string default as UTF-8, also GBK, BIG5, etc.
      */
-    protected $encoding;
+    protected string $encoding;
     /**
      * @var string 函数名 C(1, 20)
      */
-    protected $infoFunctionName;
+    protected string $infoFunctionName;
     /**
      * @var string 登陆用户名 Z(1,20) 前置机模式必填
      */
-    protected $infoLoginName;
+    protected string $infoLoginName;
     /**
      * @var int 数据格式 N(1) 2:xml 格式三
      */
-    protected $infoDataType = 2;
+    protected int $infoDataType = 2;
     /**
      * @var array
      */
@@ -33,7 +33,7 @@ abstract class BaseRequest
     /**
      * @var RequestComponent[]
      */
-    protected $components = [];
+    protected array $components = [];
 
     public function __construct($loginName, $functionName, $extraData = [])
     {

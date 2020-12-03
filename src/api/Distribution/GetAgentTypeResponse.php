@@ -19,7 +19,7 @@ class GetAgentTypeResponse extends BaseResponse
     /**
      * @var NTAGTLS2ZComponent[]
      */
-    protected $typeList=[];
+    protected array $typeList = [];
 
     /**
      * @return NTAGTLS2ZComponent[]

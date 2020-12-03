@@ -19,7 +19,7 @@ class GetModeListResponse extends BaseResponse
     /**
      * @var NTQMDLSTZComponent[]
      */
-    protected $businessModeList = [];
+    protected array $businessModeList = [];
 
     /**
      * @return NTQMDLSTZComponent[]

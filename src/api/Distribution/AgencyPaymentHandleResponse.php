@@ -19,7 +19,7 @@ class AgencyPaymentHandleResponse extends BaseResponse
     /**
      * @var NTAGCAGCZ1Component
      */
-    protected $handleResult;
+    protected NTAGCAGCZ1Component $handleResult;
 
     /**
      * @return NTAGCAGCZ1Component

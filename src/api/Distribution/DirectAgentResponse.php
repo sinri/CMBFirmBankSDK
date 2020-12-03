@@ -19,7 +19,7 @@ class DirectAgentResponse extends BaseResponse
     /**
      * @var NTREQNBRYComponent
      */
-    protected $agentResult;
+    protected NTREQNBRYComponent $agentResult;
 
     /**
      * @return NTREQNBRYComponent

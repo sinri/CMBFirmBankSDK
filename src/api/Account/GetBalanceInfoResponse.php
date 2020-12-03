@@ -19,7 +19,7 @@ class GetBalanceInfoResponse extends BaseResponse
     /**
      * @var NTQADINFZComponent[]
      */
-    protected $balanceInfoList;
+    protected array $balanceInfoList;
 
     /**
      * @return NTQADINFZComponent[]

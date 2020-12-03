@@ -20,7 +20,7 @@ class GetAgentDetailInfoResponse extends BaseResponse
     /**
      * @var NTAGCDTLY1ComponentForResponse[]
      */
-    protected $agentDetailList=[];
+    protected array $agentDetailList = [];
 
     /**
      * @return NTAGCDTLY1ComponentForResponse[]
@@ -33,7 +33,7 @@ class GetAgentDetailInfoResponse extends BaseResponse
     /**
      * @var NTAGDINFY1ComponentForResponse
      */
-    protected $agentDetailInfo;
+    protected NTAGDINFY1ComponentForResponse $agentDetailInfo;
 
     /**
      * @note 明细超过 1000 笔时返回

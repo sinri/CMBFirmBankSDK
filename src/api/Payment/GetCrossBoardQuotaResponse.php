@@ -20,12 +20,12 @@ class GetCrossBoardQuotaResponse extends BaseResponse
     /**
      * @var NTCRBINQZComponent[]
      */
-    protected $crossBoardBankInfoList=[];
+    protected array $crossBoardBankInfoList = [];
 
     /**
      * @var NTCRBINQZ2Component[]
      */
-    protected $crossBoardBankInfoList2=[];
+    protected array $crossBoardBankInfoList2 = [];
 
 
     /**

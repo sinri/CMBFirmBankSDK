@@ -14,23 +14,23 @@ abstract class BaseResponse
     /**
      * @var string C(1,20)
      */
-    protected $infoFunctionName;
+    protected string $infoFunctionName;
     /**
      * @var string N(1) 2 for XML Format III
      */
-    protected $infoDataType;
+    protected string $infoDataType;
     /**
      * @var int N `ReturnCodeDefinition::RETURN_CODE_*`
      */
-    protected $infoReturnCode;
+    protected int $infoReturnCode;
     /**
      * @var string Z(1,256)
      */
-    protected $infoErrorMessage;
+    protected string $infoErrorMessage;
     /**
      * @var array
      */
-    protected $infoExtraData = [];
+    protected array $infoExtraData = [];
 
     public function __construct(string $xml)
     {
