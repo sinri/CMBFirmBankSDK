@@ -19,7 +19,7 @@ class GetHistoryBalanceInfoResponse extends BaseResponse
     /**
      * @var NTQABINFZComponent[]
      */
-    protected $balanceList = [];
+    protected array $balanceList = [];
 
     /**
      * @return NTQABINFZComponent[]

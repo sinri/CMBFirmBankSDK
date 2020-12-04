@@ -19,7 +19,7 @@ class GetTransactionInfoResponse extends BaseResponse
     /**
      * @var NTQTSINFZComponent[]
      */
-    protected $transactionList = [];
+    protected array $transactionList = [];
 
     /**
      * @return NTQTSINFZComponent[]

@@ -19,7 +19,7 @@ class GetAgentRefundInfoResponse extends BaseResponse
     /**
      * @var NTAGDRFDZ1Component[]
      */
-    protected $refundInfoList=[];
+    protected array $refundInfoList = [];
 
     /**
      * @return NTAGDRFDZ1Component[]

@@ -6,6 +6,7 @@ namespace leqee\CMBFirmBankSDK\test\ApiTest\Account;
 
 use leqee\CMBFirmBankSDK\api\Account\component\CSRRCFDFY0Component;
 use leqee\CMBFirmBankSDK\api\Account\GetElectronicReceiptImgRequest;
+use leqee\CMBFirmBankSDK\api\Account\GetElectronicReceiptImgResponse;
 use leqee\CMBFirmBankSDK\test\ApiTest\MockedTestEnv;
 use PHPUnit\Framework\TestCase;
 use Exception;
@@ -24,16 +25,31 @@ class TestForGetElectronicReceiptImg extends TestCase
             $queryComponent
         );
 
-        $sampleXML = '<?xml version="1.0" encoding ="UTF-8"?><CMBSDKPGK>
+        $sampleXML = '<?xml version="1.0" encoding = "UTF-8"?> <CMBSDKPGK>
             <INFO> 
-                <FUNNAM>SDKCSFDFBRTIMG</FUNNAM> <DATTYP>2</DATTYP><LGNNAM>总行会计</LGNNAM> 
+                <FUNNAM>SDKCSFDFBRTIMG</FUNNAM><DATTYP>2</DATTYP><LGNNAM>总行会计</LGNNAM> 
             </INFO>
             <CSRRCFDFY0> 
-                <EACNBR>216082647110001</EACNBR><BEGDAT>20170426</BEGDAT><ENDDAT>20170526</ENDDAT><RRCFLG>1</RRCFLG><RRCCOD>HD002016</RRCCOD>
+                <EACNBR>216082647110001</EACNBR> <BEGDAT>20170426</BEGDAT> <ENDDAT>20170526</ENDDAT> <RRCFLG>1</RRCFLG> 
+                <RRCCOD>HD002016</RRCCOD>
             </CSRRCFDFY0>
-            </CMBSDKPGK>';
+        </CMBSDKPGK>';
 
         $this->assertXmlStringEqualsXmlString($request->generateXML(), $sampleXML);
+    }
+
+    public function testParseResponseXML()
+    {
+        $responseXML = '<?xml version="1.0" encoding = "UTF-8"?> <CMBSDKPGK>
+            <INFO>
+                <DATTYP>2</DATTYP> <ERRMSG>回单图片查询成功!</ERRMSG> <FUNNAM>SDKCSFDFBRTIMG</FUNNAM> <LGNNAM>总行会计</LGNNAM> <RETCOD>0</RETCOD>
+            </INFO>
+        </CMBSDKPGK>';
+        $response = (new GetElectronicReceiptImgResponse($responseXML));
+        $this->assertEquals('SDKCSFDFBRTIMG', $response->getInfoFunctionName());
+        $this->assertEquals('2', $response->getInfoDataType());
+        $this->assertEquals('0', $response->getInfoReturnCode());
+        $this->assertEquals('回单图片查询成功!', $response->getInfoErrorMessage());
     }
 
 
@@ -55,5 +71,9 @@ class TestForGetElectronicReceiptImg extends TestCase
         $client = MockedTestEnv::getHttpWebClient();
         $xml = $client->callForXML($request);
         $this->assertNotFalse($xml);
+
+        $response = (new GetElectronicReceiptImgResponse($xml));
+        $this->assertEquals('0', $response->getInfoReturnCode());
+        $this->assertEquals('回单图片查询成功!', $response->getInfoErrorMessage());
     }
 }
