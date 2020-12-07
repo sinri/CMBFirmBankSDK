@@ -8,6 +8,9 @@ use leqee\CMBFirmBankSDK\api\Account\component\ABFEEPRTZ1Component;
 use leqee\CMBFirmBankSDK\api\Account\component\AGFEERRCZ1Component;
 use leqee\CMBFirmBankSDK\api\Account\component\AGFEERRCZ2Component;
 use leqee\CMBFirmBankSDK\api\Account\component\AGNCBPAYZ1Component;
+use leqee\CMBFirmBankSDK\api\Account\component\CPRRCRCVX1Component;
+use leqee\CMBFirmBankSDK\api\Account\component\CPRRCRTNX1Component;
+use leqee\CMBFirmBankSDK\api\Account\component\CPRRCSNDX1Component;
 use leqee\CMBFirmBankSDK\api\Account\component\CSRRCFDFZ1Component;
 use leqee\CMBFirmBankSDK\api\Account\component\CSTRFPRTX0Component;
 use leqee\CMBFirmBankSDK\api\Basement\BaseResponse;
@@ -50,6 +53,21 @@ class GetElectronicReceiptResponse extends BaseResponse
      * @var AGFEERRCZ2Component[]
      */
     protected array $chargeReceiptList2  = [];
+
+    /**
+     * @var CPRRCSNDX1Component[]
+     */
+    protected array $publicPaymentReceiptList  = [];
+
+    /**
+     * @var CPRRCRCVX1Component[]
+     */
+    protected array $publicChargeReceiptList  = [];
+
+    /**
+     * @var CPRRCRTNX1Component[]
+     */
+    protected array $publicRefundReceiptList  = [];
 
     /**
      * @return CSRRCFDFZ1Component[]
@@ -99,6 +117,29 @@ class GetElectronicReceiptResponse extends BaseResponse
         return $this->chargeReceiptList2;
     }
 
+    /**
+     * @return CPRRCSNDX1Component[]
+     */
+    public function getPublicPaymentReceiptList(): array
+    {
+        return $this->publicPaymentReceiptList;
+    }
+
+    /**
+     * @return CPRRCRCVX1Component[]
+     */
+    public function getPublicChargeReceiptList(): array
+    {
+        return $this->publicChargeReceiptList;
+    }
+
+    /**
+     * @return CPRRCRTNX1Component[]
+     */
+    public function getPublicRefundReceiptList(): array
+    {
+        return $this->publicRefundReceiptList;
+    }
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
@@ -120,6 +161,16 @@ class GetElectronicReceiptResponse extends BaseResponse
                 break;
             case 'AGFEERRCZ2':
                 $this->chargeReceiptList2[] = new AGFEERRCZ2Component($component);
+                break;
+            case 'CPRRCSNDX1':
+                $this->publicPaymentReceiptList[] = new CPRRCSNDX1Component($component);
+                break;
+            case 'CPRRCRCVX1':
+                $this->publicChargeReceiptList[] = new CPRRCRCVX1Component($component);
+                break;
+            case 'CPRRCRTNX1':
+                $this->publicRefundReceiptList[] = new CPRRCRTNX1Component($component);
+                break;
         }
     }
 }
