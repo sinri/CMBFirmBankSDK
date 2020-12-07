@@ -19,7 +19,7 @@ class GetAccountListResponse extends BaseResponse
     /**
      * @var NTQACLSTZComponent[]
      */
-    protected array $accountList = [];
+    protected $accountList = [];
 
     /**
      * @return NTQACLSTZComponent[]

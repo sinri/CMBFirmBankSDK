@@ -19,7 +19,7 @@ class GetAgentDetailResponse extends BaseResponse
     /**
      * @var NTQATDQYZComponent[]
      */
-    protected array $agentDetailList = [];
+    protected $agentDetailList = [];
 
     /**
      * @return NTQATDQYZComponent[]

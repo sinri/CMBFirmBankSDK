@@ -19,7 +19,7 @@ class GetAccountInfoResponse extends BaseResponse
     /**
      * @var NTQACINFZComponent[]
      */
-    protected array $accountInfoList;
+    protected $accountInfoList;
 
     /**
      * @return NTQACINFZComponent[]

@@ -20,7 +20,7 @@ class GetAgentComprehensiveInfoResponse extends BaseResponse
     /**
      * @var NTAGCINQZComponent[]
      */
-    protected array $agentInfoList = [];
+    protected $agentInfoList = [];
 
     /**
      * @return NTAGCINQZComponent[]
@@ -33,7 +33,7 @@ class GetAgentComprehensiveInfoResponse extends BaseResponse
     /**
      * @var NTAGCQRIZComponent[]
      */
-    protected array $agentInfoList2 = [];
+    protected $agentInfoList2 = [];
 
     /**
      * @return NTAGCQRIZComponent[]

@@ -19,7 +19,7 @@ class DirectPaymentResponse extends BaseResponse
     /**
      * @var NTQPAYRQZComponent[]
      */
-    protected array $paymentResultList = [];
+    protected $paymentResultList = [];
 
 
     /**

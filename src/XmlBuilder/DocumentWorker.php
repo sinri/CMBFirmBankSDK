@@ -12,11 +12,11 @@ class DocumentWorker
     /**
      * @var ArkXMLDocument
      */
-    protected ArkXMLDocument $document;
+    protected $document;
     /**
      * @var ArkXMLElement
      */
-    protected ArkXMLElement $rootElement;
+    protected $rootElement;
 
     public function __construct($encoding = ArkXMLDocument::ENCODING_GBK, $version = '1.0')
     {
