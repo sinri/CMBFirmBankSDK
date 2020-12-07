@@ -20,12 +20,12 @@ class GetRestrictedRecipientListResponse extends BaseResponse
     /**
      * @var NTRVLINFYComponent[]
      */
-    protected array $recipientList = [];
+    protected $recipientList = [];
 
     /**
      * @var NTQRYRVLZComponent
      */
-    protected NTQRYRVLZComponent $operationInfo;
+    protected $operationInfo;
 
     /**
      * @return NTRVLINFYComponent[]

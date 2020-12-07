@@ -19,7 +19,7 @@ class GetPaymentResultListResponse extends BaseResponse
     /**
      * @var NTSTLLSTZComponent[]
      */
-    protected array $resultList = [];
+    protected $resultList = [];
 
     /**
      * @return NTSTLLSTZComponent[]

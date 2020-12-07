@@ -19,7 +19,7 @@ class GetPaymentInfoResponse extends BaseResponse
     /**
      * @var NTQPAYQYZComponent[]
      */
-    protected array $paymentInfoList;
+    protected $paymentInfoList;
 
     /**
      * @return NTQPAYQYZComponent[]

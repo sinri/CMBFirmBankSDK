@@ -27,47 +27,47 @@ class GetElectronicReceiptResponse extends BaseResponse
     /**
      * @var CSRRCFDFZ1Component[]
      */
-    protected array $totalReceiptList = [];
+    protected $totalReceiptList = [];
 
     /**
      * @var CSTRFPRTX0Component[]
      */
-    protected array $paymentReceiptList = [];
+    protected $paymentReceiptList = [];
 
     /**
      * @var AGNCBPAYZ1Component[]
      */
-    protected array $agencyPaymentReceiptList = [];
+    protected $agencyPaymentReceiptList = [];
 
     /**
      * @var ABFEEPRTZ1Component[]
      */
-    protected array $deductionReceiptList = [];
+    protected $deductionReceiptList = [];
 
     /**
      * @var AGFEERRCZ1Component[]
      */
-    protected array $chargeReceiptList1 = [];
+    protected $chargeReceiptList1 = [];
 
     /**
      * @var AGFEERRCZ2Component[]
      */
-    protected array $chargeReceiptList2  = [];
+    protected $chargeReceiptList2  = [];
 
     /**
      * @var CPRRCSNDX1Component[]
      */
-    protected array $publicPaymentReceiptList  = [];
+    protected $publicPaymentReceiptList  = [];
 
     /**
      * @var CPRRCRCVX1Component[]
      */
-    protected array $publicChargeReceiptList  = [];
+    protected $publicChargeReceiptList  = [];
 
     /**
      * @var CPRRCRTNX1Component[]
      */
-    protected array $publicRefundReceiptList  = [];
+    protected $publicRefundReceiptList  = [];
 
     /**
      * @return CSRRCFDFZ1Component[]

@@ -19,7 +19,7 @@ class GetBranchBankInfoResponse extends BaseResponse
     /**
      * @var NTACCBBKZComponent[]
      */
-    protected array $branchBankList = [];
+    protected $branchBankList = [];
 
     /**
      * @return NTACCBBKZComponent[]

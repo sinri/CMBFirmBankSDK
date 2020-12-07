@@ -19,7 +19,7 @@ class GetRefundInfoResponse extends BaseResponse
     /**
      * @var NTPAYQYBZ1Component[]
      */
-    protected array $refundInfoList = [];
+    protected $refundInfoList = [];
 
     /**
      * @return NTPAYQYBZ1Component[]

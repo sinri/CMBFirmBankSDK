@@ -20,7 +20,7 @@ class GetTransactionInfoEXResponse extends BaseResponse
     /**
      * @var NTRBPTRSZ1Component
      */
-    protected NTRBPTRSZ1Component $transactionDigest;
+    protected $transactionDigest;
 
     /**
      * @return NTRBPTRSZ1Component
@@ -34,7 +34,7 @@ class GetTransactionInfoEXResponse extends BaseResponse
      * @note 最多返回30条数据，超过 30 条请使用续传
      * @var NTQTSINFZComponent[]
      */
-    protected array $transactionList = [];
+    protected $transactionList = [];
 
     /**
      * @return NTQTSINFZComponent[]
