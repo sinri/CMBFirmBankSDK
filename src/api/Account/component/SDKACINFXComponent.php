@@ -23,6 +23,6 @@ class SDKACINFXComponent extends RequestComponent
 
     public function getTagName(): string
     {
-        return "SDKACLSTX";
+        return "SDKACINFX";
     }
 }
