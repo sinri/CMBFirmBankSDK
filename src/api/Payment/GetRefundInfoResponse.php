@@ -31,7 +31,7 @@ class GetRefundInfoResponse extends BaseResponse
 
     protected function loadOtherComponent(ArkXMLElement $component)
     {
-        if($component->getElementTag()==='NTQPAYRQZ'){
+        if($component->getElementTag()==='NTPAYQYBZ1'){
             $this->refundInfoList[]=new NTPAYQYBZ1Component($component);
         }
         // else: just ignore
